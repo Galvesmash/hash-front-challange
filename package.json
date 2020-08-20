@@ -1,0 +1,29 @@
+{
+  "name": "hash-front-challange",
+  "version": "1.0.0",
+  "description": "Hash frontend test.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Galvesmash/hash-front-challange.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Galvesmash/hash-front-challange/issues"
+  },
+  "homepage": "https://github.com/Galvesmash/hash-front-challange#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "less": "^3.12.2"
+  }
+}
