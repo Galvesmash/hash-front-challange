@@ -9,9 +9,39 @@ h6 {
   margin: 0;
 }
 
+.title {
+  font-weight: bold;
+}
+
 .divider {
   margin-bottom: 13px;
   border: 1px solid #5d9cec4d;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  label {
+    color: #656565;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 22px 0 6px;
+  }
+  input {
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 14px 9px;
+    border: 1px solid #DDE6E9;
+    &:focus {
+      border-color: #66AFE9;
+    }
+  }
+  .warning {
+    color: #CECECE;
+    margin: 3px 0 0;
+    font-size: 11px;
+    line-height: 14px;
+  }
 }
 
 .page {
@@ -21,41 +51,43 @@ h6 {
   align-items: center;
   justify-content: center;
   .card {
-    width: 608px;
-    height: 389px;
     display: flex;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 608px;
+    min-height: 389px;
     border-radius: 4px;
     border: 1px solid #D1DCE3;
     .container {
       display: flex;
       padding: 35px;
       flex-direction: column;
+      justify-content: center;
       background-color: #FFFFFF;
       &.left {
         width: 307px;
+        .title {
+          color: #656565;
+          font-size: 24px;
+          line-height: 30px;
+        }
       }
       &.right {
         width: 161px;
-        justify-content: center;
         background-color: #F7F9FA;
+        .title {
+          color: #3D75BB;
+          font-size: 16px;
+          line-height: 20px;
+          font-style: italic;
+          text-transform: uppercase;
+        }
+        .result-text {
+          margin: 0;
+          color: #5D9CEC;
+          font-size: 16px;
+          line-height: 46px;
+          font-style: italic;
+        }
       }
-    }
-    .title {
-      color: #3D75BB;
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: bold;
-      font-style: italic;
-      text-transform: uppercase;
-    }
-    .result-text {
-      margin: 0;
-      color: #5D9CEC;
-      font-size: 16px;
-      line-height: 46px;
-      font-style: italic;
     }
   }
 }

@@ -11,9 +11,24 @@
     <div class="page">
       <div class="card">
         <div class="container left">
-          <my-component>
-            <h6>LEFT</h6>
-          </my-component>
+          <h6 class="title">Simule sua Antecipação</h6>
+          <form>
+            <input-sale-value>
+              <label for="form-sale-value">Informe o valor da venda *</label>
+              <input name="form-sale-value" type="tel">
+              <p class="warning warning-sale-value"></p>
+            </input-sale-value>
+            <input-installments>
+              <label for="form-installments">Em quantas parcelas *</label>
+              <input name="form-installments" type="tel">
+              <p class="warning warning-installments"></p>
+            </input-installments>
+            <input-mdr>
+              <label for="form-mdr">Informe o percentual de MDR *</label>
+              <input name="form-mdr" type="tel">
+              <p class="warning warning-mdr"></p>
+            </input-mdr>
+          </form>
         </div>
         <div class="container right">
           <h6 class="title">Você receberá:</h6>
@@ -36,7 +51,9 @@
 
     <script src="scripts/less/dist/less.min.js" ></script>
     <script src="scripts/axios/dist/axios.min.js"></script>
-    <script src="components/myComponent.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/components/inputSaleValue.js"></script>
+    <script src="js/components/inputInstallments.js"></script>
+    <script src="js/components/inputMdr.js"></script>
   </body>
 </html>
