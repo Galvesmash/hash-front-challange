@@ -30,7 +30,6 @@ function checkForm() {
     'mdr': mdr,
     'days': [1, 15, 30, 90]
   };
-  console.log('payload', payload);
   getPeriods(payload).then(response => {
     Object.values(response).forEach((period, index) => {
       document.getElementById(`response-value-${index+1}`).innerText = parseFloat(period).toFixed(2);
