@@ -2,10 +2,10 @@ class inputSaleValue extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('focusout', () => {
-      let value = parseFloat((this.children[1].value).replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+      let value = normalizeSaleValue(this.children[1].value);
       if (isNaN(value)) {
         this.children[1].value = '';
-        this.children[2].innerText = 'Valor inválido.';
+        this.children[2].innerText = 'Mínimo de R$0,00.';
         this.children[2].style.display = 'initial';
       } else if (value < 0) {
         this.children[1].value = 'R$ 0,00';
@@ -18,6 +18,7 @@ class inputSaleValue extends HTMLElement {
         this.children[2].innerText = '';
         this.children[2].style.display = 'none';
       }
+      checkForm();
     });
   }
   connectedCallback() {

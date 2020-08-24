@@ -2,10 +2,10 @@ class inputMdr extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('focusout', () => {
-      let value = parseInt(this.children[1].value.replace('%', ''));
+      let value = normalizeMdr(this.children[1].value);
       if (isNaN(value)) {
         this.children[1].value = '';
-        this.children[2].innerText = 'Valor inválido.';
+        this.children[2].innerText = 'Mínimo de 0% e máximo de 100%.';
         this.children[2].style.display = 'initial';
       } else if (value < 0) {
         this.children[1].value = '0%';
@@ -20,6 +20,7 @@ class inputMdr extends HTMLElement {
         this.children[2].innerText = '';
         this.children[2].style.display = 'none';
       }
+      checkForm();
     });
   }
   connectedCallback() {

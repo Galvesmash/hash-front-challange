@@ -13,17 +13,17 @@
         <div class="container left">
           <h6 class="title">Simule sua Antecipação</h6>
           <form>
-            <input-sale-value>
+            <input-sale-value id="form-sale-value">
               <label for="form-sale-value">Informe o valor da venda *</label>
               <input name="form-sale-value" type="tel">
               <p class="warning warning-sale-value"></p>
             </input-sale-value>
-            <input-installments>
+            <input-installments id="form-installments">
               <label for="form-installments">Em quantas parcelas *</label>
               <input name="form-installments" type="tel">
               <p class="warning warning-installments"></p>
             </input-installments>
-            <input-mdr>
+            <input-mdr id="form-mdr">
               <label for="form-mdr">Informe o percentual de MDR *</label>
               <input name="form-mdr" type="tel">
               <p class="warning warning-mdr"></p>
@@ -34,16 +34,16 @@
           <h6 class="title">Você receberá:</h6>
           <div class="divider"></div>
           <p class="result-text">
-            Amanhã: <strong id="value1">R$ 0,00</strong>
+            Amanhã: <strong>R$ <span id="response-value-1">0,00</span></strong>
           </p>
           <p class="result-text">
-            Em 15 dias: <strong id="value2">R$ 0,00</strong>
+            Em 15 dias: <strong>R$ <span id="response-value-2">0,00</span></strong>
           </p>
           <p class="result-text">
-            Em 30 dias: <strong id="value3">R$ 0,00</strong>
+            Em 30 dias: <strong>R$ <span id="response-value-3">0,00</span></strong>
           </p>
           <p class="result-text">
-            Em 90 dias: <strong id="value4">R$ 0,00</strong>
+            Em 90 dias: <strong>R$ <span id="response-value-4">0,00</span></strong>
           </p>
         </div>
       </div>
@@ -52,6 +52,7 @@
     <script src="scripts/less/dist/less.min.js" ></script>
     <script src="scripts/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/services/axios.js"></script>
     <script src="js/components/inputSaleValue.js"></script>
     <script src="js/components/inputInstallments.js"></script>
     <script src="js/components/inputMdr.js"></script>
