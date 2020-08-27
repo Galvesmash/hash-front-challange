@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
+            failures="0"
             tests="1">
 
   <testsuite name="ecosia"
-    errors="0" failures="1" hostname="" id="" package="ecosia" skipped="0"
-    tests="1" time="5.625" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="ecosia" skipped="0"
+    tests="1" time="1.622" timestamp="">
   
-    <testcase name="Demo test ecosia.org" classname="ecosia" time="5.625" assertions="1">  <failure message="Expected element &lt;#response-value-1&gt; text to equal: &#34;768.00&#34; - expected &#34;equal &#39;768.00&#39;&#34; but got: &#34;0.00&#34; (5131ms)">    at Object.Demo test ecosia.org (C:\Users\Galvesmash\Documents\projects\hash-front-challange\tests\ecosia.js:8:20)</failure>
+    <testcase name="Demo test ecosia.org" classname="ecosia" time="1.622" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     </testcase>

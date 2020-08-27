@@ -18,4 +18,4 @@
 
 # Tests
  npm run start
- npm run nightwatch [source] [options]
+ npm run nightwatch tests/[source] [options]

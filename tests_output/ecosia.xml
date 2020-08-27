@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="ecosia"
+    errors="1" failures="0" hostname="" id="" package="ecosia" skipped="1"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+        Error: An error occurred while retrieving a new session: &#34;read ECONNRESET&#34;
+       at Socket.socketErrorListener (_http_client.js:392:9)
+       at emitErrorNT (internal/streams/destroy.js:91:8)
+       at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    </system-err>
+  
+
+    
+    <error message="An error occurred while retrieving a new session: &#34;read ECONNRESET&#34;"><![CDATA[
+      Error: An error occurred while retrieving a new session: &#34;read ECONNRESET&#34;
+    at JsonWireProtocol.handleSessionCreateError (C:\Users\Galvesmash\Documents\projects\hash-front-challange\node_modules\nightwatch\lib\transport\transport.js:103:15)
+    at HttpRequest.request.on.err (C:\Users\Galvesmash\Documents\projects\hash-front-challange\node_modules\nightwatch\lib\transport\transport.js:158:32)
+    at HttpRequest.emit (events.js:198:13)
+    at ClientRequest.originalIssuer.on.args (C:\Users\Galvesmash\Documents\projects\hash-front-challange\node_modules\nightwatch\lib\http\request.js:131:19)
+    at ClientRequest.emit (events.js:203:15)
+    at Socket.socketErrorListener (_http_client.js:392:9)
+    at Socket.emit (events.js:198:13)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+      ]]></error>  
+
+  
+    
+    <testcase
+      name="Demo test ecosia.org" classname="ecosia">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

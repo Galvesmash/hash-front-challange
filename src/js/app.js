@@ -34,6 +34,7 @@ function checkForm() {
       document.getElementById(`response-value-${index+1}`).innerText = parseFloat(defaultPeriod).toFixed(2);
     });
   }
+  document.getElementById('loader').style.display = 'flex';
   let payload = {
     'amount': saleValue,
     'installments': installments,
@@ -46,5 +47,7 @@ function checkForm() {
     });
   }).catch(error => {
     console.error('Error', error);
-  })
+  }).finally(() => {
+    document.getElementById('loader').style.display = 'none';
+  });
 };
