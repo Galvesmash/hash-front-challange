@@ -28,7 +28,7 @@ function resetAnswer() {
 function getPeriods(payload) {
   // Since this is the only connection with the API it's located here other than in a different file.
   return new Promise((resolve, reject) => {
-    axios.post('https://hash-front-test.herokuapp.com/', payload).then(response => {
+    axios.post(`https://hash-front-test.herokuapp.com/${window.location.search}`, payload).then(response => {
       resolve(response.data);
     }).catch(error => {
       reject(error);
@@ -71,9 +71,21 @@ function submitForm() {
       document.getElementById(`response-value-${index+1}`).innerText = parseFloat(period).toFixed(2);
     });
   }).catch(error => {
-    console.error('Error', error);
-    // Returned with errors.
-    showOverlay('error');
+    // Returned with errors
+    let errorStatus = (error && error.response) ? error.response.status : null;
+    if (errorStatus == 408) {
+      // Timeout error
+      showOverlay('error-408');
+    } else if (errorStatus == 500) {
+      // Timeout error
+      showOverlay('error-500');
+    } else if (!navigator.onLine) {
+      // User is Offline
+      showOverlay('offline');
+    } else {
+      // Generic error
+      showOverlay('error');
+    }
     resetAnswer();
   }).finally(() => {
     // Hides loader
