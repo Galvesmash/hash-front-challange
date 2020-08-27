@@ -9,7 +9,7 @@ h6 {
   margin: 0;
 }
 
-#loader, #offline {
+#loader, #offline, #error {
   width: 100vw;
   height: 100vh;
   display: none;
@@ -19,8 +19,11 @@ h6 {
   flex-direction: column;
   justify-content: center;
   background-color: #FFFFFFE0;
-  h1, p {
+  h1, h3, p {
     color: #656565;
+    &.error {
+      color: #BD0000;
+    }
   }
 }
 

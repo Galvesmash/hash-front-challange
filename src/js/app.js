@@ -3,12 +3,12 @@ let mdr = null;
 let saleValue = null;
 let installments = null;
 
-/* Show overlay (loader or offline) */
+/* Show overlay (loader, offline or error) */
 function showOverlay(idName) {
   document.getElementById(idName).style.display = 'flex';
 }
 
-/* Hide overlay (loader or offline) */
+/* Hide overlay (loader, offline or error) */
 function hideOverlay(idName) {
   document.getElementById(idName).style.display = 'none';
 }
@@ -73,6 +73,7 @@ function submitForm() {
   }).catch(error => {
     console.error('Error', error);
     // Returned with errors.
+    showOverlay('error');
     resetAnswer();
   }).finally(() => {
     // Hides loader

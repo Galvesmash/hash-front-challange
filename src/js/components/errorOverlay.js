@@ -1,5 +1,5 @@
-/* File to handle codes related to Offline Overlay input */
-class OfflineOverlay extends HTMLElement {
+/* File to handle codes related to Error Overlay input */
+class ErrorOverlay extends HTMLElement {
   constructor() {
     super();
     // Hide overlay when clicked
@@ -14,4 +14,4 @@ class OfflineOverlay extends HTMLElement {
   }
 }
 // component declaration
-customElements.define('offline-overlay', OfflineOverlay);
+customElements.define('error-overlay', ErrorOverlay);
