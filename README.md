@@ -1,5 +1,6 @@
 # hash-front-challange
  Hash frontend test.
+ - https://github.com/hashlab/hiring/blob/master/challenges/pt-br/front-challenge.md
 
 # Info
  This project uses npm, dotenv, express, axios, less and Nightwatch and chromedriver for tests.
