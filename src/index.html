@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,19 @@
     <link rel="stylesheet/less" type="text/css" href="less/styles.less">
     <title>Hash frontend test.</title>
   </head>
+
   <body>
     <div class="page">
+
       <div id="loader">
         <h1>Carregando</h1>
       </div>
+
+      <offline-overlay id="offline">
+        <h1>Parece que você está offline.<br>Tente se reconectar para continuar.</h1>
+        <p>Clique na tela para continuar.</p>
+      </offline-overlay>
+
       <div class="card">
         <div class="container left">
           <h6 class="title">Simule sua Antecipação</h6>
@@ -55,8 +64,10 @@
     <script src="scripts/less/dist/less.min.js" ></script>
     <script src="scripts/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/components/offlineOverlay.js"></script>
     <script src="js/components/inputSaleValue.js"></script>
     <script src="js/components/inputInstallments.js"></script>
     <script src="js/components/inputMdr.js"></script>
   </body>
+
 </html>

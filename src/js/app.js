@@ -3,29 +3,14 @@ let mdr = null;
 let saleValue = null;
 let installments = null;
 
-/* Shared function to normalize sale value input value */
-function normalizeSaleValue(value) {
-  return parseFloat(value.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+/* Show overlay (loader or offline) */
+function showOverlay(idName) {
+  document.getElementById(idName).style.display = 'flex';
 }
 
-/* Shared function to normalize installments input value */
-function normalizeInstallments(value) {
-  return parseInt(value);
-}
-
-/* Shared function to normalize mdr input value */
-function normalizeMdr(value) {
-  return parseInt(value.replace('%', ''));
-}
-
-/* Show loader */
-function showLoader() {
-  document.getElementById('loader').style.display = 'flex';
-}
-
-/* Hide loader */
-function hideLoader() {
-  document.getElementById('loader').style.display = 'flex';
+/* Hide overlay (loader or offline) */
+function hideOverlay(idName) {
+  document.getElementById(idName).style.display = 'none';
 }
 
 /* Reset html answer. */
@@ -53,17 +38,25 @@ function getPeriods(payload) {
 
 /* Called when form is fully filled */
 function submitForm() {
-  mdr = normalizeMdr(document.getElementById('form-mdr').children[1].value);
-  saleValue = normalizeSaleValue(document.getElementById('form-sale-value').children[1].value);
-  installments = normalizeInstallments(document.getElementById('form-installments').children[1].value);
+  // Verify id user is online
+  if (!navigator.onLine) {
+    return showOverlay('offline');
+  }
+
+  // Normalize input values
+  mdr = InputMdr.prototype.normalizeMdr(document.getElementById('form-mdr').children[1].value);
+  saleValue = InputSaleValue.prototype.normalizeSaleValue(document.getElementById('form-sale-value').children[1].value);
+  installments = InputInstallments.prototype.normalizeInstallments(document.getElementById('form-installments').children[1].value);
+  
   // Verify if values are correct
   if (!saleValue || !installments || !mdr) {
     // Values are incorrect, you shall not pass. Returns and applies 'defaultPeriod' to html
     return resetAnswer();
   }
   // Values are correct, proceed.
+
   // Show loader
-  showLoader();
+  showOverlay('loader');
   // Set payload
   let payload = {
     'amount': saleValue,
@@ -83,6 +76,6 @@ function submitForm() {
     resetAnswer();
   }).finally(() => {
     // Hides loader
-    hideLoader();
+    hideOverlay('loader');
   });
 };

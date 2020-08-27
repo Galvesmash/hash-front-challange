@@ -1,10 +1,10 @@
 /* File to handle codes related to sale value input */
-class inputSaleValue extends HTMLElement {
+class InputSaleValue extends HTMLElement {
   constructor() {
     super();
     // Verifies value, apply mask and show warning if needed
     this.addEventListener('focusout', () => {
-      let value = normalizeSaleValue(this.children[1].value);
+      let value = this.normalizeSaleValue(this.children[1].value);
       if (isNaN(value)) {
         this.children[1].value = '';
         this.children[2].innerText = 'Mínimo de R$0,00.';
@@ -24,10 +24,16 @@ class inputSaleValue extends HTMLElement {
       submitForm();
     });
   }
+
   connectedCallback() {
     // Applies style to this html component
     this.style.display = 'contents';
   }
+
+  /* Normalize sale value input value */
+  normalizeSaleValue(value) {
+    return parseFloat(value.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+  }
 }
-// omponent declaration
-customElements.define('input-sale-value', inputSaleValue);
+// component declaration
+customElements.define('input-sale-value', InputSaleValue);

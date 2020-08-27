@@ -1,10 +1,10 @@
 /* File to handle codes related to mdr input */
-class inputMdr extends HTMLElement {
+class InputMdr extends HTMLElement {
   constructor() {
     super();
     // Verifies value, apply mask and show warning if needed
     this.addEventListener('focusout', () => {
-      let value = normalizeMdr(this.children[1].value);
+      let value = this.normalizeMdr(this.children[1].value);
       if (isNaN(value)) {
         this.children[1].value = '';
         this.children[2].innerText = 'Mínimo de 0% e máximo de 100%.';
@@ -26,10 +26,16 @@ class inputMdr extends HTMLElement {
       submitForm();
     });
   }
+
   connectedCallback() {
     // Applies style to this html component
     this.style.display = 'contents';
   }
+
+  /* Normalize mdr input value */
+  normalizeMdr(value) {
+    return parseInt(value.replace('%', ''));
+  }
 }
-// omponent declaration
-customElements.define('input-mdr', inputMdr);
+// component declaration
+customElements.define('input-mdr', InputMdr);
