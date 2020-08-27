@@ -1,6 +1,8 @@
+/* File to handle codes related to sale value input */
 class inputSaleValue extends HTMLElement {
   constructor() {
     super();
+    // Verifies value, apply mask and show warning if needed
     this.addEventListener('focusout', () => {
       let value = normalizeSaleValue(this.children[1].value);
       if (isNaN(value)) {
@@ -18,11 +20,14 @@ class inputSaleValue extends HTMLElement {
         this.children[2].innerText = '';
         this.children[2].style.display = 'none';
       }
-      checkForm();
+      // Tries to submit form after verifying value
+      submitForm();
     });
   }
   connectedCallback() {
+    // Applies style to this html component
     this.style.display = 'contents';
   }
 }
+// omponent declaration
 customElements.define('input-sale-value', inputSaleValue);
