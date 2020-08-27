@@ -12,10 +12,11 @@
 
 # Install
  npm install
+ cp .env.sample .env
 
 # Run
  npm run start
 
 # Tests
  npm run start
- npm run nightwatch tests/[source] [options]
+ npm run nightwatch tests/[filename].js [options]

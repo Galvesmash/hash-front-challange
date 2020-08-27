@@ -1,3 +1,4 @@
 .env
 node_modules
+tests_output
 package-lock.json
