@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,5 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "less": "^3.12.2"
-  },
-  "devDependencies": {
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
   }
 }

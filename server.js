@@ -7,7 +7,3 @@ const port = process.env.PORT;
 app.use(express.static('src'));
 app.use('/scripts', express.static(`${__dirname}/node_modules/`));
 app.listen(port, () => console.log(`Listening on port ${port}!`));
-
-app.use(express.static('src'));
-app.use('/scripts', express.static(`${__dirname}/node_modules/`));
-app.listen(port, () => console.log(`Listening on port ${port}!`));

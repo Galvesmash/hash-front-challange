@@ -24,7 +24,6 @@ class inputInstallments extends HTMLElement {
   }
   connectedCallback() {
     this.style.display = 'contents';
-    this.children[2].style.display = 'none';
   }
 }
 customElements.define('input-installments', inputInstallments);

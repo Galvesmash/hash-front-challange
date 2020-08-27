@@ -15,6 +15,16 @@ function normalizeMdr(value) {
   return parseInt(value.replace('%', ''));
 }
 
+function getPeriods(payload) {
+  return new Promise((resolve, reject) => {
+    axios.post('https://hash-front-test.herokuapp.com/', payload).then(response => {
+      resolve(response.data);
+    }).catch(error => {
+      reject(error);
+    });
+  })
+}
+
 function checkForm() {
   saleValue = normalizeSaleValue(document.getElementById('form-sale-value').children[1].value);
   installments = normalizeInstallments(document.getElementById('form-installments').children[1].value);

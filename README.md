@@ -5,4 +5,4 @@
  This project uses npm, less, dotenv, express and axios.
 
 # How to Run
- npm start
+ npm run start
