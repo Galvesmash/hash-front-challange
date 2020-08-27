@@ -207,10 +207,10 @@ module.exports = {
     browser.end();
   },
 
-  // TESTS FOR API WITH NO DELAY:
+  // TEST FOR API:
   'Inputs correct values': browser => {
     browser.url('http://localhost:3000/').waitForElementVisible('body', 1000);
-    // Testing "Sale Value Input":
+    // Fill inputs
     browser.setValue('input[name="form-sale-value"]', '1000');
     browser.setValue('input[name="form-installments"]', '2');
     browser.setValue('input[name="form-mdr"]', '10');

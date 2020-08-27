@@ -70,8 +70,14 @@ function submitForm() {
     Object.values(response).forEach((period, index) => {
       document.getElementById(`response-value-${index+1}`).innerText = parseFloat(period).toFixed(2);
     });
+    // Hides loader
+    hideOverlay('loader');
   }).catch(error => {
     // Returned with errors
+    // Hides loader and resets answers
+    hideOverlay('loader');
+    resetAnswer();
+    // Show specific error
     let errorStatus = (error && error.response) ? error.response.status : null;
     if (errorStatus == 408) {
       // Timeout error
@@ -86,9 +92,5 @@ function submitForm() {
       // Generic error
       showOverlay('error');
     }
-    resetAnswer();
-  }).finally(() => {
-    // Hides loader
-    hideOverlay('loader');
   });
 };

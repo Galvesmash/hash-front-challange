@@ -18,5 +18,18 @@
  npm run start
 
 # Tests
- npm run start
- npm run nightwatch tests/[filename].js [options]
+ Testing Inputs:
+ - npm run start
+ - npm run nightwatch tests/inputs.js
+
+ Testing Timeout:
+ - npm run start
+ - npm run nightwatch tests/timeout.js
+
+ Testing Internal Error:
+ - npm run start
+ - npm run nightwatch tests/internalError.js
+
+  Testing Delay:
+ - npm run start
+ - npm run nightwatch tests/delay.js
