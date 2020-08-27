@@ -11,11 +11,11 @@
  - https://nightwatchjs.org/
 
 # Install
- npm install
- cp .env.sample .env
+ -npm install
+ -cp .env.sample .env
 
 # Run
- npm run start
+ -npm run start
 
 # Tests
  Testing Inputs:
