@@ -16,7 +16,7 @@
  - cp .env.sample .env
 
 # Run
- -npm run start
+ - npm run start
 
 # Tests
  Testing Inputs:
